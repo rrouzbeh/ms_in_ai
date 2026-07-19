@@ -1,0 +1,52 @@
+2026-07-15 22:51:56,844 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:51:56,845 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:51:56,851 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:51:56,857 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:51:56,868 - INFO - total_documents: 0
+2026-07-15 22:51:56,868 - INFO - unique_sources: 0
+2026-07-15 22:51:56,868 - INFO - missions: {}
+2026-07-15 22:51:56,868 - INFO - data_types: {}
+2026-07-15 22:51:56,868 - INFO - document_categories: {}
+2026-07-15 22:51:56,868 - INFO - file_types: {}
+2026-07-15 22:54:24,189 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:54:24,191 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:54:24,197 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:54:24,202 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:54:24,211 - INFO - total_documents: 0
+2026-07-15 22:54:24,211 - INFO - unique_sources: 0
+2026-07-15 22:54:24,211 - INFO - missions: {}
+2026-07-15 22:54:24,211 - INFO - data_types: {}
+2026-07-15 22:54:24,211 - INFO - document_categories: {}
+2026-07-15 22:54:24,211 - INFO - file_types: {}
+2026-07-15 22:56:02,551 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:56:02,554 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:56:02,565 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:56:02,571 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:56:02,581 - INFO - total_documents: 0
+2026-07-15 22:56:02,581 - INFO - unique_sources: 0
+2026-07-15 22:56:02,581 - INFO - missions: {}
+2026-07-15 22:56:02,581 - INFO - data_types: {}
+2026-07-15 22:56:02,581 - INFO - document_categories: {}
+2026-07-15 22:56:02,581 - INFO - file_types: {}
+2026-07-15 22:57:07,974 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:57:07,975 - INFO - Processed mission.txt (6 chunks)
+2026-07-15 22:57:07,982 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:57:07,987 - INFO - Processed mission.txt (4 chunks)
+2026-07-15 22:57:07,998 - INFO - total_documents: 0
+2026-07-15 22:57:07,998 - INFO - unique_sources: 0
+2026-07-15 22:57:07,998 - INFO - missions: {}
+2026-07-15 22:57:07,998 - INFO - data_types: {}
+2026-07-15 22:57:07,998 - INFO - document_categories: {}
+2026-07-15 22:57:07,998 - INFO - file_types: {}
+2026-07-15 22:57:43,419 - INFO - Processed 19900066485_textract_full_text.txt (1085 chunks)
+2026-07-15 22:57:43,647 - INFO - Processed Apollo_11_Flight_Plan_HSK_textract_full_text.txt (660 chunks)
+2026-07-15 22:57:44,140 - INFO - Processed NASA_NTRS_Archive_19710015566_textract_full_text.txt (1447 chunks)
+2026-07-15 22:57:45,268 - INFO - Processed a11transcript_pao_textract_full_text.txt (3114 chunks)
+2026-07-15 22:57:46,165 - INFO - Processed a11transcript_tec_textract_full_text.txt (2386 chunks)
+2026-07-15 22:57:46,501 - INFO - Processed a11transscript_cm_textract_full_text.txt (798 chunks)
+2026-07-15 22:57:46,557 - INFO - Processed AS13_CM_textract_full_text.txt (129 chunks)
+2026-07-15 22:57:48,027 - INFO - Processed AS13_PAO_textract_full_text.txt (3752 chunks)
+2026-07-15 22:57:49,267 - INFO - Processed AS13_TEC_textract_full_text.txt (3145 chunks)
+2026-07-15 22:57:49,502 - INFO - Processed 107-AAG_STS-51L_Mission_Audio_transcript.txt (369 chunks)
+2026-07-15 22:57:49,710 - INFO - Processed 108-AAG_STS-51L_Mission_Audio_transcript.txt (328 chunks)
+2026-07-15 22:57:49,866 - INFO - Processed 109-AAG_STS-51L_Mission_Audio_transcript.txt (254 chunks)

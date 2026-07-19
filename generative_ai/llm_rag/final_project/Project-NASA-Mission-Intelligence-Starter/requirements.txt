@@ -1,0 +1,9 @@
+chromadb==1.5.7
+openai==2.31.0
+langchain-openai==1.1.13
+langchain-community==0.3.31
+ragas==0.4.3
+sacrebleu==2.6.0
+rouge-score==0.1.2
+pandas==2.3.3
+streamlit==1.56.0
