@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-8.4.2, pluggy-1.6.0 -- /Users/cyborg/dev/ms_in_ai/generative_ai/multimodal_ai_applications/final_project/starter/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/cyborg/dev/ms_in_ai/generative_ai/multimodal_ai_applications/final_project/starter
+configfile: pyproject.toml
+plugins: asyncio-1.2.0, anyio-4.11.0, logfire-4.13.2
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 27 items
+
+tests/test_moderation_result.py::TestModerationResult::test_has_rationale_field PASSED [  3%]
+tests/test_moderation_result.py::TestModerationResult::test_rationale_is_required PASSED [  7%]
+tests/test_moderation_result.py::TestModerationResult::test_is_pydantic_model PASSED [ 11%]
+tests/test_moderation_result.py::TestTextModerationResult::test_has_all_required_fields PASSED [ 14%]
+tests/test_moderation_result.py::TestTextModerationResult::test_field_types PASSED [ 18%]
+tests/test_moderation_result.py::TestTextModerationResult::test_inherits_from_moderation_result PASSED [ 22%]
+tests/test_moderation_result.py::TestTextModerationResult::test_all_fields_are_required PASSED [ 25%]
+tests/test_moderation_result.py::TestTextModerationResult::test_is_flagged_when_any_flag_is_true PASSED [ 29%]
+tests/test_moderation_result.py::TestTextModerationResult::test_is_not_flagged_when_all_flags_are_false PASSED [ 33%]
+tests/test_moderation_result.py::TestImageModerationResult::test_has_all_required_fields PASSED [ 37%]
+tests/test_moderation_result.py::TestImageModerationResult::test_field_types PASSED [ 40%]
+tests/test_moderation_result.py::TestImageModerationResult::test_inherits_from_moderation_result PASSED [ 44%]
+tests/test_moderation_result.py::TestImageModerationResult::test_all_fields_are_required PASSED [ 48%]
+tests/test_moderation_result.py::TestImageModerationResult::test_is_flagged_when_any_flag_is_true PASSED [ 51%]
+tests/test_moderation_result.py::TestImageModerationResult::test_is_not_flagged_when_all_flags_are_false PASSED [ 55%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_has_all_required_fields PASSED [ 59%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_field_types PASSED [ 62%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_inherits_from_moderation_result PASSED [ 66%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_all_fields_are_required PASSED [ 70%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_is_flagged_when_any_flag_is_true PASSED [ 74%]
+tests/test_moderation_result.py::TestVideoModerationResult::test_is_not_flagged_when_all_flags_are_false PASSED [ 77%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_has_all_required_fields PASSED [ 81%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_field_types PASSED [ 85%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_inherits_from_moderation_result PASSED [ 88%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_all_fields_are_required PASSED [ 92%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_is_flagged_when_any_flag_is_true PASSED [ 96%]
+tests/test_moderation_result.py::TestAudioModerationResult::test_is_not_flagged_when_all_flags_are_false PASSED [100%]
+
+============================== 27 passed in 0.03s ==============================

@@ -1,0 +1,64 @@
+Evaluating run_image_moderation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+                    Evaluation Summary: run_image_moderation                    
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ID            ┃ Inputs              ┃ Outputs              ┃ Assertions ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ professional_image │ [ImageInput(image_f │ rationale='The image │ ✔✔✔✔       │
+│                    │ ile='/Users/cyborg/ │ is a clean,          │            │
+│                    │ dev/ms_in_ai/genera │ professional,        │            │
+│                    │ tive_ai/multimodal_ │ high-quality product │            │
+│                    │ ai_applications/fin │ shot of a power bank │            │
+│                    │ al_project/starter/ │ branded with "ACME". │            │
+│                    │ evals/test_data/pro │ It does not contain  │            │
+│                    │ fessional_image.jpg │ any people, PII, or  │            │
+│                    │ ')]                 │ disturbing content,  │            │
+│                    │                     │ and the image        │            │
+│                    │                     │ quality is           │            │
+│                    │                     │ excellent. It is     │            │
+│                    │                     │ perfectly            │            │
+│                    │                     │ appropriate for a    │            │
+│                    │                     │ professional         │            │
+│                    │                     │ customer service     │            │
+│                    │                     │ setting.'            │            │
+│                    │                     │ contains_pii=False   │            │
+│                    │                     │ is_disturbing=False  │            │
+│                    │                     │ is_low_quality=False │            │
+├────────────────────┼─────────────────────┼──────────────────────┼────────────┤
+│ image_with_person  │ [ImageInput(image_f │ rationale='The image │ ✔✔✔✔       │
+│                    │ ile='/Users/cyborg/ │ features a man,      │            │
+│                    │ dev/ms_in_ai/genera │ which constitutes    │            │
+│                    │ tive_ai/multimodal_ │ personally-identifia │            │
+│                    │ ai_applications/fin │ ble information      │            │
+│                    │ al_project/starter/ │ (PII). The image is  │            │
+│                    │ evals/test_data/ima │ not disturbing and   │            │
+│                    │ ge_with_person.jpg' │ is of professional   │            │
+│                    │ )]                  │ quality.'            │            │
+│                    │                     │ contains_pii=True    │            │
+│                    │                     │ is_disturbing=False  │            │
+│                    │                     │ is_low_quality=False │            │
+├────────────────────┼─────────────────────┼──────────────────────┼────────────┤
+│ low_quality_image  │ [ImageInput(image_f │ rationale='The image │ ✔✔✔✔       │
+│                    │ ile='/Users/cyborg/ │ shows a hand holding │            │
+│                    │ dev/ms_in_ai/genera │ a portable           │            │
+│                    │ tive_ai/multimodal_ │ electronic device.   │            │
+│                    │ ai_applications/fin │ Because a hand (a    │            │
+│                    │ al_project/starter/ │ part of a person) is │            │
+│                    │ evals/test_data/low │ visible,             │            │
+│                    │ _quality_image.jpg' │ contains_pii is set  │            │
+│                    │ )]                  │ to True. The image   │            │
+│                    │                     │ is significantly out │            │
+│                    │                     │ of focus, with the   │            │
+│                    │                     │ main subject (the    │            │
+│                    │                     │ device) appearing    │            │
+│                    │                     │ blurry, therefore    │            │
+│                    │                     │ is_low_quality is    │            │
+│                    │                     │ set to True. There   │            │
+│                    │                     │ is nothing           │            │
+│                    │                     │ disturbing about the │            │
+│                    │                     │ image.'              │            │
+│                    │                     │ contains_pii=True    │            │
+│                    │                     │ is_disturbing=False  │            │
+│                    │                     │ is_low_quality=True  │            │
+├────────────────────┼─────────────────────┼──────────────────────┼────────────┤
+│ Averages           │                     │                      │ 100.0% ✔   │
+└────────────────────┴─────────────────────┴──────────────────────┴────────────┘

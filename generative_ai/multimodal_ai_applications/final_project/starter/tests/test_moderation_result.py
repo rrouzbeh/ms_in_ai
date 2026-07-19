@@ -9,11 +9,11 @@ import pytest
 from pydantic import ValidationError
 
 from multimodal_moderation.types.moderation_result import (
+    AudioModerationResult,
+    ImageModerationResult,
     ModerationResult,
     TextModerationResult,
-    ImageModerationResult,
     VideoModerationResult,
-    AudioModerationResult,
 )
 
 
@@ -36,7 +36,9 @@ class TestModerationResult:
         """Verify ModerationResult is a Pydantic BaseModel"""
         result = ModerationResult(rationale="Test")
         assert hasattr(result, "model_dump"), "ModerationResult should have model_dump method (Pydantic BaseModel)"
-        assert hasattr(result, "model_validate"), "ModerationResult should have model_validate method (Pydantic BaseModel)"
+        assert hasattr(
+            result, "model_validate"
+        ), "ModerationResult should have model_validate method (Pydantic BaseModel)"
 
 
 class TestTextModerationResult:
@@ -72,13 +74,32 @@ class TestTextModerationResult:
 
     def test_inherits_from_moderation_result(self):
         """Verify TextModerationResult inherits from ModerationResult"""
-        assert issubclass(TextModerationResult, ModerationResult), \
-            "TextModerationResult should inherit from ModerationResult"
+        assert issubclass(
+            TextModerationResult, ModerationResult
+        ), "TextModerationResult should inherit from ModerationResult"
 
     def test_all_fields_are_required(self):
         """Verify all fields are required"""
         with pytest.raises(ValidationError, match="contains_pii|is_unfriendly|is_unprofessional"):
             TextModerationResult(rationale="Test")
+
+    def test_is_flagged_when_any_flag_is_true(self):
+        result = TextModerationResult(
+            rationale="Contains PII",
+            contains_pii=True,
+            is_unfriendly=False,
+            is_unprofessional=False,
+        )
+        assert result.is_flagged is True
+
+    def test_is_not_flagged_when_all_flags_are_false(self):
+        result = TextModerationResult(
+            rationale="Safe text",
+            contains_pii=False,
+            is_unfriendly=False,
+            is_unprofessional=False,
+        )
+        assert result.is_flagged is False
 
 
 class TestImageModerationResult:
@@ -114,13 +135,32 @@ class TestImageModerationResult:
 
     def test_inherits_from_moderation_result(self):
         """Verify ImageModerationResult inherits from ModerationResult"""
-        assert issubclass(ImageModerationResult, ModerationResult), \
-            "ImageModerationResult should inherit from ModerationResult"
+        assert issubclass(
+            ImageModerationResult, ModerationResult
+        ), "ImageModerationResult should inherit from ModerationResult"
 
     def test_all_fields_are_required(self):
         """Verify all fields are required"""
         with pytest.raises(ValidationError, match="contains_pii|is_disturbing|is_low_quality"):
             ImageModerationResult(rationale="Test")
+
+    def test_is_flagged_when_any_flag_is_true(self):
+        result = ImageModerationResult(
+            rationale="Low-quality image",
+            contains_pii=False,
+            is_disturbing=False,
+            is_low_quality=True,
+        )
+        assert result.is_flagged is True
+
+    def test_is_not_flagged_when_all_flags_are_false(self):
+        result = ImageModerationResult(
+            rationale="Safe image",
+            contains_pii=False,
+            is_disturbing=False,
+            is_low_quality=False,
+        )
+        assert result.is_flagged is False
 
 
 class TestVideoModerationResult:
@@ -156,13 +196,32 @@ class TestVideoModerationResult:
 
     def test_inherits_from_moderation_result(self):
         """Verify VideoModerationResult inherits from ModerationResult"""
-        assert issubclass(VideoModerationResult, ModerationResult), \
-            "VideoModerationResult should inherit from ModerationResult"
+        assert issubclass(
+            VideoModerationResult, ModerationResult
+        ), "VideoModerationResult should inherit from ModerationResult"
 
     def test_all_fields_are_required(self):
         """Verify all fields are required"""
         with pytest.raises(ValidationError, match="contains_pii|is_disturbing|is_low_quality"):
             VideoModerationResult(rationale="Test")
+
+    def test_is_flagged_when_any_flag_is_true(self):
+        result = VideoModerationResult(
+            rationale="Disturbing video",
+            contains_pii=False,
+            is_disturbing=True,
+            is_low_quality=False,
+        )
+        assert result.is_flagged is True
+
+    def test_is_not_flagged_when_all_flags_are_false(self):
+        result = VideoModerationResult(
+            rationale="Safe video",
+            contains_pii=False,
+            is_disturbing=False,
+            is_low_quality=False,
+        )
+        assert result.is_flagged is False
 
 
 class TestAudioModerationResult:
@@ -202,10 +261,31 @@ class TestAudioModerationResult:
 
     def test_inherits_from_moderation_result(self):
         """Verify AudioModerationResult inherits from ModerationResult"""
-        assert issubclass(AudioModerationResult, ModerationResult), \
-            "AudioModerationResult should inherit from ModerationResult"
+        assert issubclass(
+            AudioModerationResult, ModerationResult
+        ), "AudioModerationResult should inherit from ModerationResult"
 
     def test_all_fields_are_required(self):
         """Verify all fields are required"""
         with pytest.raises(ValidationError, match="transcription|contains_pii|is_unfriendly|is_unprofessional"):
             AudioModerationResult(rationale="Test", transcription="Test")
+
+    def test_is_flagged_when_any_flag_is_true(self):
+        result = AudioModerationResult(
+            rationale="Unfriendly audio",
+            transcription="Test transcription",
+            contains_pii=False,
+            is_unfriendly=True,
+            is_unprofessional=False,
+        )
+        assert result.is_flagged is True
+
+    def test_is_not_flagged_when_all_flags_are_false(self):
+        result = AudioModerationResult(
+            rationale="Safe audio",
+            transcription="Test transcription",
+            contains_pii=False,
+            is_unfriendly=False,
+            is_unprofessional=False,
+        )
+        assert result.is_flagged is False

@@ -12,6 +12,10 @@ class TextModerationResult(ModerationResult):
     is_unfriendly: bool = Field(description="Whether unfriendly tone or content was detected")
     is_unprofessional: bool = Field(description="Whether unprofessional tone or content was detected")
 
+    @property
+    def is_flagged(self) -> bool:
+        return any([self.contains_pii, self.is_unfriendly, self.is_unprofessional])
+
 
 class ImageModerationResult(ModerationResult):
 
@@ -20,6 +24,10 @@ class ImageModerationResult(ModerationResult):
     )
     is_disturbing: bool = Field(description="Whether the image is disturbing")
     is_low_quality: bool = Field(description="Whether the image is low quality")
+
+    @property
+    def is_flagged(self) -> bool:
+        return any([self.contains_pii, self.is_disturbing, self.is_low_quality])
 
 
 class VideoModerationResult(ModerationResult):
@@ -30,6 +38,10 @@ class VideoModerationResult(ModerationResult):
     is_disturbing: bool = Field(description="Whether the video is disturbing")
     is_low_quality: bool = Field(description="Whether the video is low quality")
 
+    @property
+    def is_flagged(self) -> bool:
+        return any([self.contains_pii, self.is_disturbing, self.is_low_quality])
+
 
 class AudioModerationResult(ModerationResult):
 
@@ -37,3 +49,7 @@ class AudioModerationResult(ModerationResult):
     contains_pii: bool = Field(description="Whether the audio contains personally-identifiable information (PII)")
     is_unfriendly: bool = Field(description="Whether unfriendly tone or content was detected")
     is_unprofessional: bool = Field(description="Whether unprofessional tone or content was detected")
+
+    @property
+    def is_flagged(self) -> bool:
+        return any([self.contains_pii, self.is_unfriendly, self.is_unprofessional])

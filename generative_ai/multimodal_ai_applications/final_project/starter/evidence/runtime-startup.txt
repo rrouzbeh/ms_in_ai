@@ -1,0 +1,27 @@
+/Users/cyborg/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/contextlib.py:144: SAWarning: Skipped unsupported reflection of expression-based index ix_cumulative_llm_token_count_total
+  next(self.gen)
+/Users/cyborg/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/contextlib.py:144: SAWarning: Skipped unsupported reflection of expression-based index ix_latency
+  next(self.gen)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1784501788.952076 8091903 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0000 00:00:1784501788.963765 8091903 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+INFO:     Will watch for changes in these directories: ['/Users/cyborg/dev/ms_in_ai/generative_ai/multimodal_ai_applications/final_project/starter']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [55603] using WatchFiles
+INFO:     Started server process [55606]
+INFO:     Waiting for application startup.
+TRACE:    ASGI [1] Started scope={'type': 'lifespan', 'asgi': {'version': '3.0', 'spec_version': '2.0'}, 'state': {}}
+TRACE:    ASGI [1] Receive {'type': 'lifespan.startup'}
+TRACE:    ASGI [1] Send {'type': 'lifespan.startup.complete'}
+INFO:     Application startup complete.
+INFO:httpx:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+TRACE:    127.0.0.1:49183 - HTTP connection made
+TRACE:    127.0.0.1:49183 - ASGI [2] Started scope={'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 49183), 'scheme': 'http', 'root_path': '', 'headers': '<...>', 'state': {}, 'method': 'GET', 'path': '/api/v1/health', 'raw_path': b'/api/v1/health', 'query_string': b''}
+TRACE:    127.0.0.1:49183 - ASGI [2] Send {'type': 'http.response.start', 'status': 200, 'headers': '<...>'}
+INFO:     127.0.0.1:49183 - "GET /api/v1/health HTTP/1.1" 200 OK
+TRACE:    127.0.0.1:49183 - ASGI [2] Send {'type': 'http.response.body', 'body': '<15 bytes>'}
+TRACE:    127.0.0.1:49183 - ASGI [2] Completed
+TRACE:    127.0.0.1:49183 - HTTP connection lost

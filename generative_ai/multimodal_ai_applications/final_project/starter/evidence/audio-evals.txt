@@ -1,0 +1,48 @@
+Evaluating run_audio_moderation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+                    Evaluation Summary: run_audio_moderation                    
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ID            ┃ Inputs              ┃ Outputs              ┃ Assertions ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ professional_audio │ [AudioInput(audio_f │ rationale='The audio │ ✔✗✔✔✔      │
+│                    │ ile='/Users/cyborg/ │ is a standard        │            │
+│                    │ dev/ms_in_ai/genera │ professional         │            │
+│                    │ tive_ai/multimodal_ │ greeting. No PII is  │            │
+│                    │ ai_applications/fin │ present.'            │            │
+│                    │ al_project/starter/ │ transcription='Welco │            │
+│                    │ evals/test_data/pro │ me to our customer   │            │
+│                    │ fessional_audio.mp3 │ support center.'     │            │
+│                    │ ')]                 │ contains_pii=False   │            │
+│                    │                     │ is_unfriendly=False  │            │
+│                    │                     │ is_unprofessional=Fa │            │
+│                    │                     │ lse                  │            │
+├────────────────────┼─────────────────────┼──────────────────────┼────────────┤
+│ audio_with_pii     │ [AudioInput(audio_f │ rationale='The audio │ ✔✔✔✔✔      │
+│                    │ ile='/Users/cyborg/ │ is polite and        │            │
+│                    │ dev/ms_in_ai/genera │ professional. It     │            │
+│                    │ tive_ai/multimodal_ │ requests             │            │
+│                    │ ai_applications/fin │ confirmation of      │            │
+│                    │ al_project/starter/ │ personal             │            │
+│                    │ evals/test_data/aud │ information,         │            │
+│                    │ io_with_pii.mp3')]  │ specifically a date  │            │
+│                    │                     │ of birth and a       │            │
+│                    │                     │ social security      │            │
+│                    │                     │ number. Therefore,   │            │
+│                    │                     │ PII is present.'     │            │
+│                    │                     │ transcription='Welco │            │
+│                    │                     │ me to the customer   │            │
+│                    │                     │ support center. My   │            │
+│                    │                     │ name is John. Can    │            │
+│                    │                     │ you please verify    │            │
+│                    │                     │ that your date of    │            │
+│                    │                     │ birth is November    │            │
+│                    │                     │ 2nd, 1978 and your   │            │
+│                    │                     │ social security      │            │
+│                    │                     │ number is            │            │
+│                    │                     │ 123456789?'          │            │
+│                    │                     │ contains_pii=True    │            │
+│                    │                     │ is_unfriendly=False  │            │
+│                    │                     │ is_unprofessional=Fa │            │
+│                    │                     │ lse                  │            │
+├────────────────────┼─────────────────────┼──────────────────────┼────────────┤
+│ Averages           │                     │                      │ 90.0% ✔    │
+└────────────────────┴─────────────────────┴──────────────────────┴────────────┘

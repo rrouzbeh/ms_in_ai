@@ -1,0 +1,5 @@
+Runtime smoke test
+Project: /Users/cyborg/dev/ms_in_ai/generative_ai/multimodal_ai_applications/final_project/starter
+FastAPI health: {"status":"ok"}
+Gradio HTTP status: 200
+Phoenix HTTP status: 200

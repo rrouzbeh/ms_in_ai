@@ -1,0 +1,89 @@
+Evaluating run_text_moderation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+                    Evaluation Summary: run_text_moderation                     
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Case ID           ┃ Inputs               ┃ Outputs              ┃ Assertions ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ professional_text │ [TextInput(text_file │ rationale="The       │ ✔✔✔✔       │
+│                   │ ='/Users/cyborg/dev/ │ message is polite,   │            │
+│                   │ ms_in_ai/generative_ │ welcoming, and       │            │
+│                   │ ai/multimodal_ai_app │ helpful. It follows  │            │
+│                   │ lications/final_proj │ standard             │            │
+│                   │ ect/starter/evals/te │ professional         │            │
+│                   │ st_data/professional │ communication        │            │
+│                   │ _text.txt')]         │ guidelines, uses     │            │
+│                   │                      │ clear language, and  │            │
+│                   │                      │ offers further       │            │
+│                   │                      │ assistance if        │            │
+│                   │                      │ needed. No           │            │
+│                   │                      │ personally           │            │
+│                   │                      │ identifiable         │            │
+│                   │                      │ information was      │            │
+│                   │                      │ included in the      │            │
+│                   │                      │ message. The tone is │            │
+│                   │                      │ perfectly aligned    │            │
+│                   │                      │ with ACME            │            │
+│                   │                      │ Enterprise's         │            │
+│                   │                      │ standards.           │            │
+│                   │                      │ Confidence score:    │            │
+│                   │                      │ 1.0"                 │            │
+│                   │                      │ contains_pii=False   │            │
+│                   │                      │ is_unfriendly=False  │            │
+│                   │                      │ is_unprofessional=Fa │            │
+│                   │                      │ lse                  │            │
+├───────────────────┼──────────────────────┼──────────────────────┼────────────┤
+│ text_with_pii     │ [TextInput(text_file │ rationale='The       │ ✗✔✔✔       │
+│                   │ ='/Users/cyborg/dev/ │ message is friendly  │            │
+│                   │ ms_in_ai/generative_ │ and professional in  │            │
+│                   │ ai/multimodal_ai_app │ tone, using polite   │            │
+│                   │ lications/final_proj │ and helpful          │            │
+│                   │ ect/starter/evals/te │ language. However,   │            │
+│                   │ st_data/text_with_pi │ it violates          │            │
+│                   │ i.txt')]             │ professional privacy │            │
+│                   │                      │ standards by         │            │
+│                   │                      │ including an         │            │
+│                   │                      │ excessive amount of  │            │
+│                   │                      │ PII (full name,      │            │
+│                   │                      │ complete home        │            │
+│                   │                      │ address, personal    │            │
+│                   │                      │ email, personal      │            │
+│                   │                      │ phone number, and    │            │
+│                   │                      │ account number) in a │            │
+│                   │                      │ single               │            │
+│                   │                      │ communication, which │            │
+│                   │                      │ is considered        │            │
+│                   │                      │ unprofessional       │            │
+│                   │                      │ handling of          │            │
+│                   │                      │ sensitive data.      │            │
+│                   │                      │ Confidence Score:    │            │
+│                   │                      │ 0.95.'               │            │
+│                   │                      │ contains_pii=True    │            │
+│                   │                      │ is_unfriendly=False  │            │
+│                   │                      │ is_unprofessional=Tr │            │
+│                   │                      │ ue                   │            │
+├───────────────────┼──────────────────────┼──────────────────────┼────────────┤
+│ unfriendly_text   │ [TextInput(text_file │ rationale="The       │ ✔✔✔✔       │
+│                   │ ='/Users/cyborg/dev/ │ message is both      │            │
+│                   │ ms_in_ai/generative_ │ unfriendly and       │            │
+│                   │ ai/multimodal_ai_app │ unprofessional. It   │            │
+│                   │ lications/final_proj │ employs aggressive,  │            │
+│                   │ ect/starter/evals/te │ condescending, and   │            │
+│                   │ st_data/unfriendly_t │ impatient language   │            │
+│                   │ ext.txt')]           │ ('Seriously??',      │            │
+│                   │                      │ 'that's your         │            │
+│                   │                      │ problem', 'wasting   │            │
+│                   │                      │ my time'). It lacks  │            │
+│                   │                      │ the courtesy and     │            │
+│                   │                      │ respect expected in  │            │
+│                   │                      │ a professional       │            │
+│                   │                      │ customer service     │            │
+│                   │                      │ setting. No PII was  │            │
+│                   │                      │ identified.          │            │
+│                   │                      │ Confidence score:    │            │
+│                   │                      │ 1.0."                │            │
+│                   │                      │ contains_pii=False   │            │
+│                   │                      │ is_unfriendly=True   │            │
+│                   │                      │ is_unprofessional=Tr │            │
+│                   │                      │ ue                   │            │
+├───────────────────┼──────────────────────┼──────────────────────┼────────────┤
+│ Averages          │                      │                      │ 91.7% ✔    │
+└───────────────────┴──────────────────────┴──────────────────────┴────────────┘
