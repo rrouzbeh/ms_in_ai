@@ -1,0 +1,31 @@
+{
+  "training_examples": 22500,
+  "validation_examples": 2500,
+  "test_examples": 25000,
+  "best_epoch": 3,
+  "best_validation_accuracy": 78.12,
+  "test_accuracy": 76.75999999999999,
+  "training_minutes": 1.652713509715007,
+  "device": "mps",
+  "checkpoint": "sentimentscope_model.pt",
+  "training_history": [
+    {
+      "epoch": 1,
+      "training_loss": 0.6227446769110181,
+      "validation_accuracy": 72.84,
+      "minutes": 0.7440534562493364
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.5026114600371908,
+      "validation_accuracy": 75.48,
+      "minutes": 0.45866591528368494
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.4290297162422741,
+      "validation_accuracy": 78.12,
+      "minutes": 0.44752799028453105
+    }
+  ]
+}
